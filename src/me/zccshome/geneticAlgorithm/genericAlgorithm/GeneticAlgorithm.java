@@ -1,4 +1,4 @@
-package me.zcchome.geneticAlgorithm.genericAlgorithm;
+package me.zccshome.geneticAlgorithm.genericAlgorithm;
 
 import java.util.ArrayList;
 import java.util.Collections;

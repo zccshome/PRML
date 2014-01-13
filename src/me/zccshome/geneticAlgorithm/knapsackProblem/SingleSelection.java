@@ -1,6 +1,6 @@
-package me.zcchome.geneticAlgorithm.knapsackProblem;
+package me.zccshome.geneticAlgorithm.knapsackProblem;
 
-import me.zcchome.geneticAlgorithm.coreInterface.Individual;
+import me.zccshome.geneticAlgorithm.coreInterface.Individual;
 
 /**
  * 

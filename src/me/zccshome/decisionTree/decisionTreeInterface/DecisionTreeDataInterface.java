@@ -1,4 +1,4 @@
-package me.zcchome.decisionTree.decisionTreeInterface;
+package me.zccshome.decisionTree.decisionTreeInterface;
 
 /**
  * This interface is used to determine the structure of each node in the decision tree

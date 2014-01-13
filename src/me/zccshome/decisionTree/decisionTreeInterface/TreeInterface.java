@@ -1,4 +1,4 @@
-package me.zcchome.decisionTree.decisionTreeInterface;
+package me.zccshome.decisionTree.decisionTreeInterface;
 
 import java.util.ArrayList;
 

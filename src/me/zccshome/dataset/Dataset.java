@@ -1,10 +1,10 @@
-package me.zcchome.dataset;
+package me.zccshome.dataset;
 
 import java.util.ArrayList;
 
-import me.zcchome.data.IData;
-import me.zcchome.data.NaiveLinearData;
-import me.zcchome.data.SimpleLinearData;
+import me.zccshome.data.IData;
+import me.zccshome.data.NaiveLinearData;
+import me.zccshome.data.SimpleLinearData;
 
 public class Dataset {
 	private ArrayList<IData> dataList;

@@ -1,9 +1,9 @@
-package me.zcchome.regression;
+package me.zccshome.regression;
 
 import java.util.ArrayList;
 
-import me.zcchome.data.NaiveLinearData;
-import me.zcchome.dataset.Dataset;
+import me.zccshome.data.NaiveLinearData;
+import me.zccshome.dataset.Dataset;
 
 public class NaiveGradientDescent {
 	private ArrayList<NaiveLinearData> dataList;

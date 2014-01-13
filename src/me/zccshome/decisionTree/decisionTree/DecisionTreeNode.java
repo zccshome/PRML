@@ -1,7 +1,7 @@
-package me.zcchome.decisionTree.decisionTree;
+package me.zccshome.decisionTree.decisionTree;
 
 import java.util.ArrayList;
-import me.zcchome.decisionTree.decisionTreeInterface.TreeInterface;
+import me.zccshome.decisionTree.decisionTreeInterface.TreeInterface;
 
 /**
  * To implement the tree node of the decision tree and supplementing some methods.

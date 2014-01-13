@@ -1,4 +1,4 @@
-package me.zcchome.decisionTree.decisionTree;
+package me.zccshome.decisionTree.decisionTree;
 
 import java.io.BufferedReader;
 import java.io.File;

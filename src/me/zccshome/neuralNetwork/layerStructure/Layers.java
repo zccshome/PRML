@@ -1,4 +1,4 @@
-package me.zcchome.neuralNetwork.layerStructure;
+package me.zccshome.neuralNetwork.layerStructure;
 
 import java.util.ArrayList;
 

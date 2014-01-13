@@ -1,4 +1,4 @@
-package me.zcchome.data;
+package me.zccshome.data;
 
 /**
  * y = kx

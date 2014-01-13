@@ -1,4 +1,4 @@
-package me.zcchome.neuralNetwork.bp;
+package me.zccshome.neuralNetwork.bp;
 
 import java.io.BufferedReader;
 import java.io.File;

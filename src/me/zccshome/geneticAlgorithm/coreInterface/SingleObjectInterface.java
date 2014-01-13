@@ -1,4 +1,4 @@
-package me.zcchome.geneticAlgorithm.coreInterface;
+package me.zccshome.geneticAlgorithm.coreInterface;
 
 /**
  * 

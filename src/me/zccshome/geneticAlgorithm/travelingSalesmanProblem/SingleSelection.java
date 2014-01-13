@@ -1,6 +1,6 @@
-package me.zcchome.geneticAlgorithm.travelingSalesmanProblem;
+package me.zccshome.geneticAlgorithm.travelingSalesmanProblem;
 
-import me.zcchome.geneticAlgorithm.coreInterface.Individual;
+import me.zccshome.geneticAlgorithm.coreInterface.Individual;
 
 
 /**

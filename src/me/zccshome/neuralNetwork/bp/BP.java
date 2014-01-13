@@ -1,9 +1,9 @@
-package me.zcchome.neuralNetwork.bp;
+package me.zccshome.neuralNetwork.bp;
 
-import me.zcchome.neuralNetwork.layerStructure.InputLayerNode;
-import me.zcchome.neuralNetwork.layerStructure.HiddenLayerNode;
-import me.zcchome.neuralNetwork.layerStructure.OutputLayerNode;
-import me.zcchome.neuralNetwork.layerStructure.Layers;
+import me.zccshome.neuralNetwork.layerStructure.InputLayerNode;
+import me.zccshome.neuralNetwork.layerStructure.HiddenLayerNode;
+import me.zccshome.neuralNetwork.layerStructure.OutputLayerNode;
+import me.zccshome.neuralNetwork.layerStructure.Layers;
 
 public class BP
 {

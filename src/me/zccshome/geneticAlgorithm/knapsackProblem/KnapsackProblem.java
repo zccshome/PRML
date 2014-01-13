@@ -1,4 +1,4 @@
-package me.zcchome.geneticAlgorithm.knapsackProblem;
+package me.zccshome.geneticAlgorithm.knapsackProblem;
 
 
 import java.io.*;
@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 import javax.swing.JFileChooser;
 
-import me.zcchome.geneticAlgorithm.coreInterface.GeneticAlgorithmInterface;
+import me.zccshome.geneticAlgorithm.coreInterface.GeneticAlgorithmInterface;
 
 
 /**

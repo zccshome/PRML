@@ -1,4 +1,4 @@
-package me.zcchome.geneticAlgorithm.travelingSalesmanProblem;
+package me.zccshome.geneticAlgorithm.travelingSalesmanProblem;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 import javax.swing.JFileChooser;
 
-import me.zcchome.geneticAlgorithm.coreInterface.GeneticAlgorithmInterface;
+import me.zccshome.geneticAlgorithm.coreInterface.GeneticAlgorithmInterface;
 
 /**
  * 

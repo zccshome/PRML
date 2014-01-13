@@ -1,4 +1,4 @@
-package me.zcchome.data;
+package me.zccshome.data;
 
 import java.util.ArrayList;
 import java.util.List;
