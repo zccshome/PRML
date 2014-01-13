@@ -3,8 +3,8 @@ package me.zcchome.dataset;
 import java.util.ArrayList;
 
 import me.zcchome.data.IData;
-import me.zcchome.data.LinearData;
-import me.zcchome.data.LinearDataModal;
+import me.zcchome.data.NaiveLinearData;
+import me.zcchome.data.SimpleLinearData;
 
 public class Dataset {
 	private ArrayList<IData> dataList;
@@ -34,16 +34,16 @@ public class Dataset {
 		double[] test8 = {3,2};
 		double[] test9 = {3,3};
 		double[] test10 = {4,1};
-		this.dataList.add(new LinearDataModal(test1, 2.1));
-		this.dataList.add(new LinearDataModal(test2, 3));
-		this.dataList.add(new LinearDataModal(test3, 3.9));
-		this.dataList.add(new LinearDataModal(test4, 2.9));
-		this.dataList.add(new LinearDataModal(test5, 4));
-		this.dataList.add(new LinearDataModal(test6, 5.1));
-		this.dataList.add(new LinearDataModal(test7, 3.9));
-		this.dataList.add(new LinearDataModal(test8, 5));
-		this.dataList.add(new LinearDataModal(test9, 6));
-		this.dataList.add(new LinearDataModal(test10, 5.1));
+		this.dataList.add(new SimpleLinearData(test1, 2.1));
+		this.dataList.add(new SimpleLinearData(test2, 3));
+		this.dataList.add(new SimpleLinearData(test3, 3.9));
+		this.dataList.add(new SimpleLinearData(test4, 2.9));
+		this.dataList.add(new SimpleLinearData(test5, 4));
+		this.dataList.add(new SimpleLinearData(test6, 5.1));
+		this.dataList.add(new SimpleLinearData(test7, 3.9));
+		this.dataList.add(new SimpleLinearData(test8, 5));
+		this.dataList.add(new SimpleLinearData(test9, 6));
+		this.dataList.add(new SimpleLinearData(test10, 5.1));
 		
 		// test data
 //		if(this.dataList.get(0) instanceof LinearData) {
@@ -63,20 +63,20 @@ public class Dataset {
 	public void setDataList(ArrayList<IData> dataList) {
 		this.dataList = dataList;
 	}
-	public static ArrayList<LinearData> translateToLinearData(ArrayList<IData> dataList) {
-		ArrayList<LinearData> retList = new ArrayList<LinearData>();
-		if(!(dataList != null && dataList.size() > 0 && dataList.get(0) instanceof LinearData))
+	public static ArrayList<NaiveLinearData> translateToLinearData(ArrayList<IData> dataList) {
+		ArrayList<NaiveLinearData> retList = new ArrayList<NaiveLinearData>();
+		if(!(dataList != null && dataList.size() > 0 && dataList.get(0) instanceof NaiveLinearData))
 			return retList;
 		for(IData d: dataList)
-			retList.add((LinearData)d);
+			retList.add((NaiveLinearData)d);
 		return retList;
 	}
-	public static ArrayList<LinearDataModal> translateToLinearDataModal(ArrayList<IData> dataList) {
-		ArrayList<LinearDataModal> retList = new ArrayList<LinearDataModal>();
-		if(!(dataList != null && dataList.size() > 0 && dataList.get(0) instanceof LinearDataModal))
+	public static ArrayList<SimpleLinearData> translateToLinearDataModal(ArrayList<IData> dataList) {
+		ArrayList<SimpleLinearData> retList = new ArrayList<SimpleLinearData>();
+		if(!(dataList != null && dataList.size() > 0 && dataList.get(0) instanceof SimpleLinearData))
 			return retList;
 		for(IData d: dataList)
-			retList.add((LinearDataModal)d);
+			retList.add((SimpleLinearData)d);
 		return retList;
 	}
 }

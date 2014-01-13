@@ -5,20 +5,20 @@ import java.util.List;
 
 /**
  * y = w0 + w1 * x1 + w2 * x2 + ...
- * @author asus
+ * @author zccshome
  *
  */
-public class LinearDataModal implements IData{
+public class SimpleLinearData implements IData{
 	private List<Double> x;
 	private double y;
 	
-	public LinearDataModal(List<Double> x, double y) {
+	public SimpleLinearData(List<Double> x, double y) {
 		super();
 		this.x = x;
 		this.y = y;
 	}
 	
-	public LinearDataModal(double[] x, double y) {
+	public SimpleLinearData(double[] x, double y) {
 		super();
 		this.x = new ArrayList<Double>();
 		for(double xx: x)

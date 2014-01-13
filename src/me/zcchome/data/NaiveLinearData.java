@@ -2,14 +2,14 @@ package me.zcchome.data;
 
 /**
  * y = kx
- * @author asus
+ * @author zccshome
  *
  */
-public class LinearData implements IData{
+public class NaiveLinearData implements IData{
 	private double x;
 	private double y;
 	
-	public LinearData(double x, double y) {
+	public NaiveLinearData(double x, double y) {
 		this.x = x;
 		this.y = y;
 	}

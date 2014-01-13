@@ -2,11 +2,11 @@ package me.zcchome.regression;
 
 import java.util.ArrayList;
 
-import me.zcchome.data.LinearData;
+import me.zcchome.data.NaiveLinearData;
 import me.zcchome.dataset.Dataset;
 
 public class NaiveGradientDescent {
-	private ArrayList<LinearData> dataList;
+	private ArrayList<NaiveLinearData> dataList;
 	private double k;
 	private static final double GAMMA = 0.0001;
 	private static final double LAMDA = 0.0001;
@@ -22,7 +22,7 @@ public class NaiveGradientDescent {
 //		double loss = getLoss();
 		double adjust = 0;
 		for(int i = 0; i < 1000; i++) {
-			for(LinearData data: dataList) {
+			for(NaiveLinearData data: dataList) {
 				adjust += (k * Math.pow(data.getX(), 2) - data.getX() * data.getY());
 			}
 			adjust  = GAMMA * adjust + LAMDA * k;
@@ -34,7 +34,7 @@ public class NaiveGradientDescent {
 	
 	public double getLoss() {
 		double loss = 0;
-		for(LinearData data: dataList) {
+		for(NaiveLinearData data: dataList) {
 			loss += Math.pow(data.getY() - k * data.getX(), 2);
 		}
 		
@@ -43,17 +43,17 @@ public class NaiveGradientDescent {
 	
 	public double getError() {
 		double loss = 0;
-		for(LinearData data: dataList) {
+		for(NaiveLinearData data: dataList) {
 			loss += Math.pow(data.getY() - k * data.getX(), 1);
 		}
 		return loss;
 	}
 
-	public ArrayList<LinearData> getDataList() {
+	public ArrayList<NaiveLinearData> getDataList() {
 		return dataList;
 	}
 
-	public void setDataList(ArrayList<LinearData> dataList) {
+	public void setDataList(ArrayList<NaiveLinearData> dataList) {
 		this.dataList = dataList;
 	}
 

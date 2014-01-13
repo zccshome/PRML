@@ -3,12 +3,11 @@ package me.zcchome.regression;
 import java.util.ArrayList;
 import java.util.List;
 
-import me.zcchome.data.LinearData;
-import me.zcchome.data.LinearDataModal;
+import me.zcchome.data.SimpleLinearData;
 import me.zcchome.dataset.Dataset;
 
 public class SimpleGradientDescent {
-	private List<LinearDataModal> dataList;
+	private List<SimpleLinearData> dataList;
 	private List<Double> w;
 	private static final double GAMMA = 0.0001;
 	private static final double LAMDA = 0.0001;
@@ -30,7 +29,7 @@ public class SimpleGradientDescent {
 		double adjust = 0;
 		for(int i = 0; i < 10000; i++) {
 			for(int j = 1; j < w.size(); j++) {
-				for(LinearDataModal data: dataList) {
+				for(SimpleLinearData data: dataList) {
 					adjust += -data.getX().get(j-1);
 				}
 				adjust = GAMMA * getError() * adjust + LAMDA * w.get(j);
@@ -44,7 +43,7 @@ public class SimpleGradientDescent {
 	
 	public double getLoss() {
 		double loss = 0;
-		for(LinearDataModal data: dataList) {
+		for(SimpleLinearData data: dataList) {
 			double t = data.getY() - w.get(0);
 			for(int i = 1; i <= data.getX().size(); i++) {
 				t -= w.get(i) * data.getX().get(i-1);
@@ -59,7 +58,7 @@ public class SimpleGradientDescent {
 	
 	public double getError() {
 		double loss = 0;
-		for(LinearDataModal data: dataList) {
+		for(SimpleLinearData data: dataList) {
 			double t = data.getY() - w.get(0);
 			for(int i = 1; i <= data.getX().size(); i++) {
 				t -= w.get(i) * data.getX().get(i-1);
@@ -69,11 +68,11 @@ public class SimpleGradientDescent {
 		return loss;
 	}
 
-	public List<LinearDataModal> getDataList() {
+	public List<SimpleLinearData> getDataList() {
 		return dataList;
 	}
 
-	public void setDataList(List<LinearDataModal> dataList) {
+	public void setDataList(List<SimpleLinearData> dataList) {
 		this.dataList = dataList;
 	}
 
