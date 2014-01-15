@@ -1,11 +1,11 @@
 package me.zccshome.parameterEstimation;
 
-public class EM {
+public class EMNaive {
 	private Data data;
 	private double u;
 	private double sigma;
 	
-	public EM() {
+	public EMNaive() {
 		data = new Data();
 		u = Math.random();
 		sigma = Math.random();
@@ -84,7 +84,7 @@ public class EM {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		EM mle = new EM();
+		EMNaive mle = new EMNaive();
 		mle.run();
 	}
 

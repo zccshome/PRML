@@ -9,8 +9,14 @@ public class Data {
 	
 	public Data() {
 		data = new ArrayList<Double>();
-		for(int i = 0; i < 1000; i++) {
-			data.add(nextGaussion(2, 1));
+		for(int i = 0; i < 10; i++) {
+			data.add(nextGaussion(2, 0.1));
+		}
+		for(int i = 0; i < 10; i++) {
+			data.add(nextGaussion(3, 0.1));
+		}
+		for(int i = 0; i < 10; i++) {
+			data.add(nextGaussion(4, 0.1));
 		}
 	}
 	public double nextGaussion(double u, double sigma) {
