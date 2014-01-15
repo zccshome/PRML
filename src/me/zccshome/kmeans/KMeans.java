@@ -1,9 +1,12 @@
-package me.zccshome.kmeans.data;
+package me.zccshome.kmeans;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import me.zccshome.kmeans.data.Data;
+import me.zccshome.kmeans.data.Point;
 
 public class KMeans {
 	private Map<Point, Integer> classificationMap;
