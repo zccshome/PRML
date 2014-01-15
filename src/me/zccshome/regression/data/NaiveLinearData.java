@@ -1,4 +1,4 @@
-package me.zccshome.data;
+package me.zccshome.regression.data;
 
 /**
  * y = kx

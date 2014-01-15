@@ -23,30 +23,30 @@ public class EMMultivariateNormalMixtures {
 //			sigma.add(Math.random());
 //			pie.add(Math.random());
 //		}
-		u.add(2.1);
-		u.add(3.0);
-		u.add(3.9);
+		u.add(2.3);
+		u.add(3.3);
+		u.add(3.7);
 		sigma.add(0.01);
 		sigma.add(0.01);
 		sigma.add(0.01);
 		pie.add(0.2);
-		pie.add(0.4);
-		pie.add(0.4);
+		pie.add(0.6);
+		pie.add(0.2);
 	}
 	public void run() {
-		int size = data.getData().size();
 		for(int i = 0; i < 100; i++) {
 			// E step
 			calculateZ();
 			// M step
 			for(int j = 0; j < DISTRIBUTION_NUM; j++) {
-//				System.out.println(calculateTi(j, 0) / size);
-//				System.out.println(calculateTi(j, 1) / calculateTi(j, 0));
-//				System.out.println((calculateTi(j, 2)-calculateTi(j, 1) * calculateTi(j, 1) / calculateTi(j, 0)) / calculateTi(j, 0));
-//				System.out.println();
-				pie.set(j, calculateTi(j, 0) / size);
-				u.set(j, calculateTi(j, 1) / calculateTi(j, 0));
-				sigma.set(j, (calculateTi(j, 2)-calculateTi(j, 1) * calculateTi(j, 1) / calculateTi(j, 0)) / calculateTi(j, 0));
+				pie.set(j, calculatePie(j));
+				u.set(j, calculateU(j));
+				sigma.set(j, calculateSigma(j));
+//				for(int k = 0; k < DISTRIBUTION_NUM; k++) {
+//					System.out.println("pie"+k+"="+pie.get(k));
+//					System.out.println("u"+k+"="+u.get(k));
+//					System.out.println("sigma"+k+"="+sigma.get(k));
+//				}
 			}
 		}
 		for(int j = 0; j < DISTRIBUTION_NUM; j++) {
@@ -60,23 +60,42 @@ public class EMMultivariateNormalMixtures {
 			for(int j = 0; j < data.getData().size(); j++)
 				Zij[i][j] = calculateZij(i,j);
 	}
-	public double calculateTi(int i, int pow) {
+	public double calculatePie(int i) {
 		double ans = 0;
 		int size = data.getData().size();
 		for(int k = 0; k < size; k++) {
-			ans += Zij[i][k] * Math.pow(data.getData().get(k), pow);
+			ans += Zij[i][k];
 		}
-		return ans;
+		return ans / size;
+	}
+	public double calculateU(int i) {
+		double ans1 = 0;
+		double ans2 = 0;
+		int size = data.getData().size();
+		for(int k = 0; k < size; k++) {
+			ans1 += Zij[i][k] * data.getData().get(k);
+			ans2 += Zij[i][k];
+		}
+		return ans1 / ans2;
+	}
+	public double calculateSigma(int i) {
+		double ans1 = 0;
+		double ans2 = 0;
+		int size = data.getData().size();
+		for(int k = 0; k < size; k++) {
+			ans1 += Zij[i][k] * Math.pow(data.getData().get(k) - u.get(i), 2);
+			ans2 += Zij[i][k];
+		}
+		return Math.sqrt(ans1 / ans2);
 	}
 	public double calculateZij(int i, int j) {
 		double a = pie.get(i) * getProbability(data.getData().get(j), u.get(i), sigma.get(i));
-		double b = 0;
+		double b = 0.0;
 		for(int k = 0; k < DISTRIBUTION_NUM; k++) {
-			//System.out.println("pppppppppppppp"+getProbability(data.getData().get(k), u.get(i), sigma.get(i)));
 			b += pie.get(k) * getProbability(data.getData().get(j), u.get(k), sigma.get(k));
 		}
-		//System.out.println("Z"+i+j+"="+a / b);
-		return a / b;
+		if(a==0) return 0;
+		return b == 0 ? 1.0:a / b;
 	}
 	
 	public double getProbability(double value, double u, double sigma) {

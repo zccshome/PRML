@@ -1,10 +1,10 @@
-package me.zccshome.regression;
+package me.zccshome.regression.gradientDescent;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import me.zccshome.data.SimpleLinearData;
-import me.zccshome.dataset.Dataset;
+import me.zccshome.regression.data.SimpleLinearData;
+import me.zccshome.regression.dataset.Dataset;
 
 public class SimpleGradientDescent {
 	private List<SimpleLinearData> dataList;
