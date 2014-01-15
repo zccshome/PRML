@@ -3,7 +3,7 @@ package me.zccshome.parameterEstimation;
 import java.util.ArrayList;
 import java.util.List;
 
-public class EMMultivariateNormalMixtures {
+public class EMGMM {
 	private Data data;
 	private List<Double> pie;
 	private List<Double> u;
@@ -11,7 +11,7 @@ public class EMMultivariateNormalMixtures {
 	public static final int DISTRIBUTION_NUM = 3;
 	private double[][] Zij;
 	
-	public EMMultivariateNormalMixtures() {
+	public EMGMM() {
 		super();
 		data = new Data();
 		pie = new ArrayList<Double>();
@@ -139,7 +139,7 @@ public class EMMultivariateNormalMixtures {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		EMMultivariateNormalMixtures em = new EMMultivariateNormalMixtures();
+		EMGMM em = new EMGMM();
 		em.run();
 	}
 
